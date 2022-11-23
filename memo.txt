@@ -1,0 +1,5 @@
+React.VFC を使うべき理由
+https://zenn.dev/json_hardcoder/articles/4c730bcd4344bf
+＞親から子にコンポーネントを渡す際にエラーが出たので解決。
+
+
