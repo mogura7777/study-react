@@ -3,3 +3,6 @@ https://zenn.dev/json_hardcoder/articles/4c730bcd4344bf
 ＞親から子にコンポーネントを渡す際にエラーが出たので解決。
 
 
+<Link><a>Home<a></Link>でエラー発生する。
+https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor
+＞Next.js v13以降で修正されている。Linkの子要素にaタグなしでOK
