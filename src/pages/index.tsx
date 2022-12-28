@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
@@ -7,15 +7,21 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [count, setCount] = useState(1)
-  const handlClick = (e) => {
-    setCount(count => count + 1);
-  }
-  useEffect(() => {
+  const handlClick = useCallback(() => {
+    if (count < 10) {
+      setCount(e => e + 1);
+    }
+  }, [count]);
 
+
+  useEffect(() => {
+    // マウント時
     document.body.style.backgroundColor = "lightblue";
     return () => {
+      // アンマウント時
       document.body.style.backgroundColor = "";
     }
+    // []の中の変更時に実行される
   }, [])
   return (
     <div className={styles.container}>
